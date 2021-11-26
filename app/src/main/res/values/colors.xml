@@ -10,4 +10,5 @@
     <color name="main_color">#141530</color>
     <color name="btn_pinkcolor">#FF2667</color>
     <color name="btn_bluecolor">#292A50</color>
+    <color name="grey">#939292</color>
 </resources>
