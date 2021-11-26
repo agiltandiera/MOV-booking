@@ -11,6 +11,12 @@
         android:theme="@style/Theme.MOVBooking">
         <activity
             android:name=".SignInActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".onBoarding.OnBoardingThreeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".onBoarding.OnBoardingTwoActivity"
             android:exported="true" />
         <activity
             android:name=".onBoarding.OnBoardingOneActivity"
