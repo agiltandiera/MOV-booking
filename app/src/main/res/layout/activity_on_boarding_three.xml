@@ -37,7 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="Tidak khawatir kelewatan\nupdate film terbaru"
+        android:text="Gunakan e-wallet untuk\ntransaksi tiket nonton"
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
