@@ -8,14 +8,14 @@
     android:background="@color/main_color">
 
     <TextView
-        android:id="@+id/signUp2"
+        android:id="@+id/photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="Sign Up"
+        android:text="Photo"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
