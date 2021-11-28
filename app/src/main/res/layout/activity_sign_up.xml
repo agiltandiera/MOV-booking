@@ -75,6 +75,20 @@
         app:layout_constraintTop_toBottomOf="@+id/pass"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Email"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtName"
+        tools:ignore="MissingConstraints" />
+
     <EditText
         android:id="@+id/editTxtUsername"
         android:layout_width="match_parent"
@@ -114,7 +128,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/white"
         android:ems="10"
-        android:hint="Novrinda Agil"
+        android:text="Novrinda Agil"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/grey"
@@ -122,6 +136,23 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/editTxtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:text="agiltandiera27@gmail.com"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_pink3"
