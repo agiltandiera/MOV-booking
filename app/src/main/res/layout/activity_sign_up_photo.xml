@@ -74,7 +74,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_pink5"
+        android:id="@+id/btn_pink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -83,6 +83,7 @@
         android:background="@drawable/shape_rectagle_pink"
         android:text="SIMPAN DAN LANJUTKAN"
         android:textColor="@color/white"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btn_pink4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
