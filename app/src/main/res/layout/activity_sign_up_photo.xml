@@ -7,6 +7,21 @@
     tools:context=".onBoarding.SignUpPhotoActivity"
     android:background="@color/main_color">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_pink4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/shape_rectagle_blue"
+        android:text="UPLOAD NANTI"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/photo"
         android:layout_width="match_parent"
