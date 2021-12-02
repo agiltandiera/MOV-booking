@@ -108,6 +108,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_home_1"/>
+        <ImageView
+            android:id="@+id/ic_ticke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tiket"/>
 
     </LinearLayout>
 
