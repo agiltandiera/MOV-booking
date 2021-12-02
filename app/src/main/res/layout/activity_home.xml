@@ -113,6 +113,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_tiket"/>
+        <ImageView
+            android:id="@+id/ic_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile_2"/>
 
     </LinearLayout>
 
