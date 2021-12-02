@@ -107,7 +107,7 @@
             android:id="@+id/ic_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_home_1"/>
+            android:src="@drawable/ic_home"/>
         <ImageView
             android:id="@+id/ic_ticke"
             android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
             android:id="@+id/ic_profil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_profile_2"/>
+            android:src="@drawable/ic_profile"/>
 
     </LinearLayout>
 
