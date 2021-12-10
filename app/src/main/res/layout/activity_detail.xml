@@ -31,12 +31,38 @@
 
     <TextView
         android:id="@+id/description_movie"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Action, Sci-fi, Kids"
         android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_movie" />
+        app:layout_constraintTop_toBottomOf="@+id/title_movie"  />
+
+    <TextView
+        android:id="@+id/storyboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Storyboard"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_movie" />
+
+    <TextView
+        android:id="@+id/desc_storyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="The Avangers must stop Thanos, a mad Titan, and his army\nfrom getting their hands on all the infinity stones. However,\nthe mad Titan is prepares to go to any lengths\nto carry out his insane plan. "
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storyboard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
