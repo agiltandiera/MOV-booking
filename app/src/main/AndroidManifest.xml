@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MOVBooking">
         <activity
+            android:name=".editProfilActivity"
+            android:exported="true" />
+        <activity
             android:name=".pilihBangkuActivity"
             android:exported="true" />
         <activity
