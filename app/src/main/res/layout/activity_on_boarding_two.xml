@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/now_playing" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_home"
+        android:id="@+id/btn_pink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
