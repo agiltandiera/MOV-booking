@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MOVBooking">
         <activity
+            android:name=".CheckoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetailActivity"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".onBoarding.SignUpPhotoActivity"
+            android:name=".SignUpPhotoActivity"
             android:exported="true" />
         <activity
             android:name=".SignUpActivity"

@@ -1,4 +1,4 @@
-package com.tandiera.project.movbooking.onBoarding
+package com.tandiera.project.movbooking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
