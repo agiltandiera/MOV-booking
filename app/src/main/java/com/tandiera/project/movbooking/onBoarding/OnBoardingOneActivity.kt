@@ -20,6 +20,7 @@ class OnBoardingOneActivity : AppCompatActivity() {
 
         val button2: Button = findViewById(R.id.btn_blue)
         button2.setOnClickListener {
+            finishAffinity() //hapus semua page yang sudah ditampilkan
             val intent = Intent(this@OnBoardingOneActivity, SignInActivity::class.java)
             startActivity(intent)
         }
