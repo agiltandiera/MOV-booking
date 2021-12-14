@@ -11,8 +11,10 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
+//        Handle Handler yang delay selama 5 detik
         var handler = Handler()
         handler.postDelayed({
+//          Setelah delay, activity selanjutnya yaitu onBoardingOne
             val intent = Intent(this@SplashScreenActivity,
                 OnBoardingOneActivity::class.java)
             startActivity(intent)
