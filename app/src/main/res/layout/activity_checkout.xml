@@ -44,7 +44,7 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"/>
 
     <TextView
         android:id="@+id/datetime"
@@ -55,13 +55,18 @@
         android:text="Date/time"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/when" />
+        app:layout_constraintTop_toBottomOf="@+id/when"
+        android:drawableLeft="@drawable/ic_calendar_today"
+        android:drawablePadding="10dp"/>
 
     <TextView
         android:id="@+id/cinema"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_local_movies"
+        android:drawablePadding="10dp"
         android:text="Cinema"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +88,7 @@
         android:id="@+id/cinemaValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Nipah Mall, Cinema 3"
         android:textColor="@color/white"
