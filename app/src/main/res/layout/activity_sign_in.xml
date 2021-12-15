@@ -86,11 +86,11 @@
         android:text="Password"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtUsername"
+        app:layout_constraintTop_toBottomOf="@+id/et_username"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTxtUsername"
+        android:id="@+id/et_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -106,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
-        android:id="@+id/editTxtPass"
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
