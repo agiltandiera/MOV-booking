@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tandiera.project.movbooking" >
+    package="com.tandiera.project.movbooking">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MOVBooking" >
+        android:theme="@style/Theme.MOVBooking">
         <activity
             android:name=".checkout.CheckoutSuccessActivity"
             android:exported="true" />
@@ -37,7 +37,7 @@
             android:name=".DetailActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".home.HomeActivity"
             android:exported="true" />
         <activity
             android:name=".sign.signUp.SignUpPhotoActivity"
@@ -59,7 +59,7 @@
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
