@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.tandiera.project.movbooking.R
-import com.tandiera.project.movbooking.SignInActivity
+import com.tandiera.project.movbooking.sign.signIn.SignInActivity
 
 class OnBoardingThreeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

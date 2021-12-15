@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "611471511858",
+    "project_id": "mov-booking",
+    "storage_bucket": "mov-booking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611471511858:android:b6667e583757381837072b",
+        "android_client_info": {
+          "package_name": "com.tandiera.project.movbooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611471511858-982pb9uqv6ijd3aphgl8mdc2n2vkeoj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe9_E67pwAGQmJaN22emjv7IOggwiQcME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611471511858-982pb9uqv6ijd3aphgl8mdc2n2vkeoj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

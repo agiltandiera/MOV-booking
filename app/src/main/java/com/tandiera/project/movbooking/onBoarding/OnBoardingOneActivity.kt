@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.tandiera.project.movbooking.R
-import com.tandiera.project.movbooking.SignInActivity
-import java.util.prefs.Preferences
+import com.tandiera.project.movbooking.sign.signIn.SignInActivity
 
 class OnBoardingOneActivity : AppCompatActivity() {
 

@@ -36,13 +36,13 @@
             android:name=".HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".SignUpPhotoActivity"
+            android:name=".sign.signUp.SignUpPhotoActivity"
             android:exported="true" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".sign.signUp.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".sign.signIn.SignInActivity"
             android:exported="true" />
         <activity
             android:name=".onBoarding.OnBoardingThreeActivity"
