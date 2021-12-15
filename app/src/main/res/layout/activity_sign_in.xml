@@ -8,7 +8,7 @@
     android:background="@color/main_color">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_pink2"
+        android:id="@+id/btn_pink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,13 +17,13 @@
         android:background="@drawable/shape_rectagle_pink"
         android:text="LANJUTKAN"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_blue2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_blue2"
+        android:id="@+id/btn_blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -97,7 +97,6 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/white"
         android:ems="10"
-        android:hint="username"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/grey"
@@ -107,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
-        android:id="@+id/pass"
+        android:id="@+id/editTxtPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
