@@ -25,42 +25,42 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        mFirebaseInstance = FirebaseDatabase.getInstance()
-        mDatabase = FirebaseDatabase.getInstance().getReference()
-        mFirebaseDatabase = mFirebaseInstance.getReference("User")
-
-        preferences = Preferences(this)
-
-        val button1: Button = findViewById(R.id.btn_pink)
-        button1.setOnClickListener {
-            sUsername = et_username.text.toString()
-            sPassword = et_password.text.toString()
-            sNama = et_nama.text.toString()
-            sEmail = et_email.text.toString()
-
-            if (sUsername.equals("")) {
-                et_username.error = "Silahkan isi Username"
-                et_username.requestFocus()
-            } else if (sPassword.equals("")) {
-                et_password.error = "Silahkan isi Password"
-                et_password.requestFocus()
-            } else if (sNama.equals("")) {
-                et_nama.error = "Silahkan isi Nama"
-                et_nama.requestFocus()
-            } else if (sEmail.equals("")) {
-                et_email.error = "Silahkan isi Email"
-                et_email.requestFocus()
-            } else {
-
-                var statusUsername = sUsername.indexOf(".")
-                if (statusUsername >=0) {
-                    et_username.error = "Silahkan tulis Username Anda tanpa ."
-                    et_username.requestFocus()
-                } else {
-                    saveUser(sUsername, sPassword, sNama, sEmail)
-                }
-
-            }
-        }
+//        mFirebaseInstance = FirebaseDatabase.getInstance()
+//        mDatabase = FirebaseDatabase.getInstance().getReference()
+//        mFirebaseDatabase = mFirebaseInstance.getReference("User")
+//
+//        preferences = Preferences(this)
+//
+//        val button1: Button = findViewById(R.id.btn_pink)
+//        button1.setOnClickListener {
+//            sUsername = et_username.text.toString()
+//            sPassword = et_password.text.toString()
+//            sNama = et_nama.text.toString()
+//            sEmail = et_email.text.toString()
+//
+//            if (sUsername.equals("")) {
+//                et_username.error = "Silahkan isi Username"
+//                et_username.requestFocus()
+//            } else if (sPassword.equals("")) {
+//                et_password.error = "Silahkan isi Password"
+//                et_password.requestFocus()
+//            } else if (sNama.equals("")) {
+//                et_nama.error = "Silahkan isi Nama"
+//                et_nama.requestFocus()
+//            } else if (sEmail.equals("")) {
+//                et_email.error = "Silahkan isi Email"
+//                et_email.requestFocus()
+//            } else {
+//
+//                var statusUsername = sUsername.indexOf(".")
+//                if (statusUsername >=0) {
+//                    et_username.error = "Silahkan tulis Username Anda tanpa ."
+//                    et_username.requestFocus()
+//                } else {
+//                    saveUser(sUsername, sPassword, sNama, sEmail)
+//                }
+//
+//            }
+//        }
     }
 }
