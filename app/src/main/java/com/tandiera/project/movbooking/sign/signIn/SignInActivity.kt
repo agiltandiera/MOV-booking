@@ -60,14 +60,36 @@ class SignInActivity : AppCompatActivity() {
 
     private fun pushLogin(iUsername: String, iPassword: String) {
         mDatabase.child(iUsername).addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var user = snapshot.getValue(User::class.java)
-            }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(
+                    this@SignInActivity, error.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var user = snapshot.getValue(User::class.java)
+
+                if (user == null) { //jika data null, maka tampilkan di bawah ini
+                    Toast.makeText(
+                        this@SignInActivity, "User tidak ditemukan",
+                        Toast.LENGTH_LONG
+                    ).show()
+                } else { //jika data ditemukn, maka ke home page
+
+                    // cek apakah password sama dgn database
+                    if (user.password.equals(iPassword)) {
+                        var intent = Intent(this@SignInActivity, HomeActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(
+                            this@SignInActivity, "Password Anda Salah",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
             }
         })
     }
-
 }
