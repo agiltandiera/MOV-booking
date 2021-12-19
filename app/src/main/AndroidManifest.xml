@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MOVBooking">
         <activity
+            android:name=".sign.signIn.TestSignActivity"
+            android:exported="false" />
+        <activity
             android:name=".checkout.CheckoutSuccessActivity"
             android:exported="true" />
         <activity
