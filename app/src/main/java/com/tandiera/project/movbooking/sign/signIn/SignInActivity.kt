@@ -19,28 +19,55 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.tandiera.project.movbooking.databinding.ActivityCheckoutBinding.bind
 import com.tandiera.project.movbooking.databinding.ActivityCheckoutBinding.inflate
 import com.tandiera.project.movbooking.databinding.ActivityCheckoutSuccessBinding.inflate
+import com.tandiera.project.movbooking.databinding.ActivitySignInBinding
 import com.tandiera.project.movbooking.onBoarding.OnBoardingTwoActivity
 
 class SignInActivity : AppCompatActivity() {
 
 //   Initialize Binding
-    private lateinit var binding : SignInActivityBinding
+    private lateinit var binding : ActivitySignInBinding
+    lateinit var iUsername: String
+    lateinit var iPassword : String
+
+    lateinit var mDatabase : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = SignInActivityBinding.inflate(layoutInflater)
+        binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-////        val button1: Button = findViewById(R.id.btn_blue)
-//        btn_blue.setOnClickListener {
-//
-//        }
+//        isi value database
+        mDatabase = FirebaseDatabase.getInstance().getReference("User")
 
-        binding.name.text ="tes"
-        binding.button.setOnClickListener {
+        binding.btnBlue.setOnClickListener {
+            iUsername = binding.etUsername.text.toString()
+            iPassword = binding.etPassword.text.toString()
 
+            if(iUsername.equals("")) {
+                binding.etUsername.error = "Silakan masukkan username Anda"
+                binding.etUsername.requestFocus()
+            } else if(iPassword.equals("")) {
+                binding.etPassword.error = "Silakan masukkan password Anda"
+                binding.etPassword.requestFocus()
+            } else {
+                pushLogin(iUsername, iPassword)
+            }
         }
     }
+
+    private fun pushLogin(iUsername: String, iPassword: String) {
+        mDatabase.child(iUsername).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var user = snapshot.getValue(User::class.java)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
 }
