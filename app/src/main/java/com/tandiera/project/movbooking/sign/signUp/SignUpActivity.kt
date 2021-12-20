@@ -3,14 +3,10 @@ package com.tandiera.project.movbooking.sign.signUp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.Sampler
-import android.widget.Button
 import android.widget.Toast
 import com.google.firebase.database.*
-import com.tandiera.project.movbooking.R
 import com.tandiera.project.movbooking.databinding.ActivitySignUpBinding
 import com.tandiera.project.movbooking.sign.signIn.User
-import java.util.prefs.Preferences
 
 class SignUpActivity : AppCompatActivity() {
 

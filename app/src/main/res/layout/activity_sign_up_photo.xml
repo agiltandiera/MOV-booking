@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/username2"
+        android:id="@+id/tv_hello"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -50,16 +50,26 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
+        android:id="@+id/iv_profile"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/user_picture"
-        app:layout_constraintBottom_toTopOf="@+id/btn_pink4"
+        android:src="@drawable/user_pic"
+        app:layout_constraintBottom_toTopOf="@+id/btn_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/photo" />
 
+    <ImageView
+        android:id="@+id/btn_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_btn_upload"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+        app:layout_constraintEnd_toEndOf="@+id/iv_profile"
+        android:background="@drawable/shape_rectagle_white"/>
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_pink4"
+        android:id="@+id/btn_blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,7 +95,7 @@
         android:text="SIMPAN DAN LANJUTKAN"
         android:textColor="@color/white"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/btn_pink4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
