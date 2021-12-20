@@ -36,7 +36,7 @@ class SignInActivity : AppCompatActivity() {
 
         // onBoarding hanya muncul ketika app dirun pertama kali
         // setelah kedua kali dirun, maka onBoarding tidak akan muncul lagi
-        preference.setValue("onBoarding", "1")
+        preference.setValues("onBoarding", "1")
         if(preference.getValues("status").equals("1")) {
             // Lngsung masuk ke menu home
 
@@ -87,12 +87,12 @@ class SignInActivity : AppCompatActivity() {
                     // cek apakah password sama dgn database
                     if (user.password.equals(iPassword)) {
                         // jika sukses, maka ambil data
-                            preference.setValue("Nama", user.nama.toString())
-                            preference.setValue("User", user.username.toString())
-                            preference.setValue("URL", user.url.toString())
-                            preference.setValue("Email", user.email.toString())
-                            preference.setValue("Saldo", user.saldo.toString())
-                            preference.setValue("Status", "1")
+                            preference.setValues("Nama", user.nama.toString())
+                            preference.setValues("User", user.username.toString())
+                            preference.setValues("URL", user.url.toString())
+                            preference.setValues("Email", user.email.toString())
+                            preference.setValues("Saldo", user.saldo.toString())
+                            preference.setValues("Status", "1")
 
                         var intent = Intent(this@SignInActivity, HomeActivity::class.java)
                         startActivity(intent)
