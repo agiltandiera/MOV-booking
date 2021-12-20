@@ -3,7 +3,6 @@ package com.tandiera.project.movbooking.sign.signIn
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
-import android.content.SharedPreferences
 import android.widget.Toast
 import com.google.firebase.database.*
 
