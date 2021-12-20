@@ -3,22 +3,21 @@ package com.tandiera.project.movbooking.utils
 import android.content.Context
 import android.content.SharedPreferences
 
-class Preferences(val context: Context) {
-
+class Preferences (val context: Context) {
     companion object {
-        const val MEETING_PREF = "USER_PREF"
+        const val USER_PREFF = "USER_PREFF"
     }
 
-    val sharedPref = context.getSharedPreferences(MEETING_PREF, 0)
+    var sharedPreferences = context.getSharedPreferences(USER_PREFF,0)
 
-    fun setValues(key: String, value: String) {
-        val editor: SharedPreferences.Editor = sharedPref.edit()
+    fun setValue(key: String, value: String) {
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putString(key, value)
         editor.apply()
     }
 
-    fun getValues(key: String): String? {
-        return sharedPref.getString(key, "")
+//    func untuk ambil value
+    fun getValues(key: String) : String? {
+        return sharedPreferences.getString(key, "")
     }
-
 }
