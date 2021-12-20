@@ -42,7 +42,7 @@ class SignInActivity : AppCompatActivity() {
 //        isi value database
         mDatabase = FirebaseDatabase.getInstance().getReference("User")
 
-        binding.btnBlue.setOnClickListener {
+        binding.btnPink.setOnClickListener {
             iUsername = binding.etUsername.text.toString()
             iPassword = binding.etPassword.text.toString()
 
@@ -55,6 +55,11 @@ class SignInActivity : AppCompatActivity() {
             } else {
                 pushLogin(iUsername, iPassword)
             }
+        }
+
+        binding.btnBlue.setOnClickListener {
+            var intent = Intent(this@SignInActivity, SignUpActivity::class.java)
+            startActivity(intent)
         }
     }
 
