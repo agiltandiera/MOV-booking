@@ -3,6 +3,7 @@ package com.tandiera.project.movbooking.sign.signIn
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.content.SharedPreferences
 import android.widget.Toast
 import com.google.firebase.database.*
 
@@ -12,6 +13,7 @@ import com.google.firebase.database.DatabaseReference
 
 import com.google.firebase.database.FirebaseDatabase
 import com.tandiera.project.movbooking.databinding.ActivitySignInBinding
+import com.tandiera.project.movbooking.utils.Preferences
 
 class SignInActivity : AppCompatActivity() {
 
@@ -21,6 +23,7 @@ class SignInActivity : AppCompatActivity() {
     lateinit var iPassword : String
 
     lateinit var mDatabase : DatabaseReference
+    lateinit var preference : Preferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +32,17 @@ class SignInActivity : AppCompatActivity() {
 
 //        isi value database
         mDatabase = FirebaseDatabase.getInstance().getReference("User")
+        preference = Preferences(this)
 
+        // onBoarding hanya muncul ketika app dirun pertama kali
+        // setelah kedua kali dirun, maka onBoarding tidak akan muncul lagi
+        preference.setValue("onBoarding", "1")
+        if(preference.getValues("status").equals("1")) {
+            // Lngsung masuk ke menu home
+
+            var goHome = Intent(this@SignInActivity, HomeActivity::class.java)
+            startActivity(goHome)
+        }
         binding.btnPink.setOnClickListener {
             iUsername = binding.etUsername.text.toString()
             iPassword = binding.etPassword.text.toString()
@@ -73,6 +86,14 @@ class SignInActivity : AppCompatActivity() {
 
                     // cek apakah password sama dgn database
                     if (user.password.equals(iPassword)) {
+                        // jika sukses, maka ambil data
+                            preference.setValue("Nama", user.nama.toString())
+                            preference.setValue("User", user.username.toString())
+                            preference.setValue("URL", user.url.toString())
+                            preference.setValue("Email", user.email.toString())
+                            preference.setValue("Saldo", user.saldo.toString())
+                            preference.setValue("Status", "1")
+
                         var intent = Intent(this@SignInActivity, HomeActivity::class.java)
                         startActivity(intent)
                     } else {
