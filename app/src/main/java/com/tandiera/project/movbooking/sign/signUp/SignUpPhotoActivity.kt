@@ -11,11 +11,17 @@ import com.tandiera.project.movbooking.R
 import com.tandiera.project.movbooking.databinding.ActivitySignUpPhotoBinding
 import com.tandiera.project.movbooking.utils.Preferences
 import android.Manifest
+import android.app.ProgressDialog.show
+import android.content.Intent
+import android.widget.Toast
+import com.google.android.gms.auth.api.signin.internal.Storage
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
+import com.tandiera.project.movbooking.home.HomeActivity
+import java.util.*
 
 class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
 
@@ -68,6 +74,53 @@ class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
                     .withPermission(Manifest.permission.CAMERA)
                     .withListener(this)
                     .check()
+
+            }
+        }
+
+        binding.btnBlue.setOnClickListener {
+            // foto bersifat opsional
+            finishAffinity()
+
+            var goHome = Intent(this@SignUpPhotoActivity, HomeActivity::class.java)
+            startActivity(goHome)
+        }
+
+        // btn untuk save
+        binding.btnPink.setOnClickListener {
+            // buat kondisi untuk upload ke firebase
+            if(filePath != null) {
+                // masuk ke progress upload
+                    // memberitahu user jika sedang mengupload foto
+                var progressDialog = ProgessDialog(this)
+                progressDialog.setTitile("Loading...")
+                progressDialog.show()
+
+                var ref = storageRerefensi.child("image/"+ UUID.randomUUID().toString())
+                ref.putFile(filePath)
+                    .addOnSuccessListener {
+                        progressDialog.dismiss()
+                        Toast.makeText(this, "Uploaded", Toast.LENGTH_LONG).show()
+
+                        ref.downloadUrl.addOnSuccessListener {
+                            preference.setValues("url", it.toString())
+                        }
+
+                        finishAffinity()
+                        var goHome = Intent(this@SignUpPhotoActivity, HomeActivity::class.java)
+                        startActivity(goHome)
+                    }
+                    .addOnFailureListener {
+                        progressDialog.dismiss()
+                        Toast.makeText(this, "Failed", Toast.LENGTH_LONG).show()
+                    }
+                    .addOnProgressListener {
+                        taskSnapshot -> var progress = 100.0 * taskSnapshot.bytesTransferred / taskSnapshot.totalByteCount
+                        progressDialog.setMessage("Upload " + progress.toInt()+"%")
+                    }
+
+            } // jika file null
+            else {
 
             }
         }
