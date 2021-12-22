@@ -11,9 +11,15 @@ import com.tandiera.project.movbooking.R
 import com.tandiera.project.movbooking.databinding.ActivitySignUpPhotoBinding
 import com.tandiera.project.movbooking.utils.Preferences
 import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.ProgressDialog.show
 import android.content.Intent
+import android.graphics.Bitmap
+import android.provider.MediaStore
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.google.android.gms.auth.api.signin.internal.Storage
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
@@ -127,17 +133,42 @@ class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
     }
 
     override fun onPermissionGranted(response: PermissionGrantedResponse?) {
-        TODO("Not yet implemented")
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also {
+            takePictureIntent ->
+            takePictureIntent.resolveActivity(packageManager)?.also {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+            }
+        }
     }
 
     override fun onPermissionDenied(response: PermissionDeniedResponse?) {
-        TODO("Not yet implemented")
+        Toast.makeText(this, "Anda tidak bisa menambahkan foto profil", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onBackPressed() {
+        Toast.makeText(this, "Tergesah? Klik tombol upload nanti", Toast.LENGTH_LONG).show()
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            var bitmap = data?.extras.?get("data") as Bitmap
+            statusAdd = true
+
+            filePath = data.getData()!!
+            Glide.with(this)
+                .load(bitmap)
+                .apply(RequestOptions.circleCropTransform())
+                .into(binding.ivProfile)
+
+            binding.btnPink.visibility = View.VISIBLE
+            binding.ivProfile.setImageResource(R.drawable.ic_btn_delete)
+        }
     }
 
     override fun onPermissionRationaleShouldBeShown(
         permission: PermissionRequest?,
         token: PermissionToken?
     ) {
-        TODO("Not yet implemented")
     }
 }
