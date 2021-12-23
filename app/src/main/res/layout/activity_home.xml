@@ -37,13 +37,13 @@
             android:id="@+id/iv_menu2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_tiket_active" />
+            android:src="@drawable/ic_tiket" />
 
         <ImageView
             android:id="@+id/iv_menu3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_profile_active" />
+            android:src="@drawable/ic_profile" />
 
     </LinearLayout>
 
