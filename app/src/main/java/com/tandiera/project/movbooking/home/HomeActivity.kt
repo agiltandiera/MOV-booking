@@ -19,7 +19,10 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val fragmentTiket = TiketFragment()
+        val fragmentSetting = SettingFragment()
         val fragmentHome = DashboardFragment()
+
         setFragment(fragmentHome)
 
         // Jika ivMenu1 diklik
@@ -32,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.ivMenu2.setOnClickListener{
-            setFragment(fragmentHome)
+            setFragment(fragmentTiket)
 
             changeIcon(binding.ivMenu1, R.drawable.ic_home)
             changeIcon(binding.ivMenu2, R.drawable.ic_tiket_active)
@@ -40,7 +43,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.ivMenu3.setOnClickListener{
-            setFragment(fragmentHome)
+            setFragment(fragmentSetting)
 
             changeIcon(binding.ivMenu1, R.drawable.ic_home)
             changeIcon(binding.ivMenu2, R.drawable.ic_tiket)
