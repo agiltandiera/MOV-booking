@@ -14,23 +14,18 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ProgressDialog
-import android.app.ProgressDialog.show
 import android.content.Intent
 import android.graphics.Bitmap
 import android.provider.MediaStore
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.google.android.gms.auth.api.signin.internal.Storage
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.tandiera.project.movbooking.home.HomeActivity
-import com.tandiera.project.movbooking.sign.signIn.User
 import java.util.*
 
 class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
