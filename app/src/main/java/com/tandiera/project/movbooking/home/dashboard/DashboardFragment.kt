@@ -5,7 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.tandiera.project.movbooking.R
+import com.tandiera.project.movbooking.databinding.ActivitySignUpPhotoBinding
+import com.tandiera.project.movbooking.databinding.FragmentDashboardBinding
+import com.tandiera.project.movbooking.utils.Preferences
+import java.text.NumberFormat
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +33,10 @@ class DashboardFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var binding: FragmentDashboardBinding
+    lateinit var preferences: Preferences
+    lateinit var mDatabase: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +50,41 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        preferences = Preferences(requireActivity().applicationContext)
+        mDatabase = FirebaseDatabase.getInstance().getReference("Film")
+
+        binding.tvNama.setText(preferences.getValues("nama"))
+        if(preferences.getValues("saldo")).equals("") {
+            currency(preferences.getValues("saldo")!!.toDouble(), binding.tvSaldo)
+        }
+
+        // library glide untuk menampilkan gambar
+        Glide.with(this)
+            .load(preferences.getValues("url"))
+            .apply(RequestOptions.circleCropTransform())
+            .into(binding.ivProfil)
+
+        binding.rvNowplaying.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvComingSoon.layoutManager = LinearLayoutManager(context) // vertikal  layout
+        getData()
+    }
+
+    private fun getData() {
+        TODO("Not yet implemented")
+    }
+
+    private fun currency(harga : Double, textView: TextView) {
+        val localID = Locale("in", "ID")
+        val format = NumberFormat.getCurrencyInstance(localID)
+        textView.setText(format.format(harga))
     }
 
     companion object {
