@@ -13,6 +13,7 @@ import com.tandiera.project.movbooking.utils.Preferences
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.ProgressDialog
 import android.app.ProgressDialog.show
 import android.content.Intent
 import android.graphics.Bitmap
@@ -21,12 +22,15 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.gms.auth.api.signin.internal.Storage
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.tandiera.project.movbooking.home.HomeActivity
+import com.tandiera.project.movbooking.sign.signIn.User
 import java.util.*
 
 class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
@@ -47,6 +51,10 @@ class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
     lateinit var storage: FirebaseStorage
     lateinit var storageRerefensi: StorageReference
     lateinit var preference: Preferences
+
+//    lateinit var user : User
+//    private lateinit var mFirebaseDatabase: DatabaseReference
+//    private lateinit var mFirebaseInstance: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,8 +106,8 @@ class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
             if(filePath != null) {
                 // masuk ke progress upload
                     // memberitahu user jika sedang mengupload foto
-                var progressDialog = ProgessDialog(this)
-                progressDialog.setTitile("Loading...")
+                val progressDialog = ProgressDialog(this)
+                progressDialog.setTitle("Uploading...")
                 progressDialog.show()
 
                 var ref = storageRerefensi.child("image/"+ UUID.randomUUID().toString())
@@ -152,12 +160,11 @@ class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
     @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            var bitmap = data?.extras.?get("data") as Bitmap
+            var bitmap = data?.extras?.get("data") as Bitmap
             statusAdd = true
 
-            filePath = data.getData()!!
             Glide.with(this)
-                .load(bitmap)
+                .load(filePath)
                 .apply(RequestOptions.circleCropTransform())
                 .into(binding.ivProfile)
 
