@@ -6,17 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.tandiera.project.movbooking.R
 import com.tandiera.project.movbooking.databinding.ActivitySignUpPhotoBinding
 import com.tandiera.project.movbooking.databinding.FragmentDashboardBinding
+import com.tandiera.project.movbooking.model.Film
 import com.tandiera.project.movbooking.utils.Preferences
 import java.text.NumberFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,6 +39,7 @@ class DashboardFragment : Fragment() {
     lateinit var preferences: Preferences
     lateinit var mDatabase: DatabaseReference
 
+    private var dataList = ArrayList<Film>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -62,7 +65,7 @@ class DashboardFragment : Fragment() {
         mDatabase = FirebaseDatabase.getInstance().getReference("Film")
 
         binding.tvNama.setText(preferences.getValues("nama"))
-        if(preferences.getValues("saldo")).equals("") {
+        if (!preferences.getValues("saldo").equals("")){
             currency(preferences.getValues("saldo")!!.toDouble(), binding.tvSaldo)
         }
 
@@ -78,7 +81,22 @@ class DashboardFragment : Fragment() {
     }
 
     private fun getData() {
-        TODO("Not yet implemented")
+        mDatabase.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                dataList.clear()
+                for (getdataSnapshot in dataSnapshot .getChildren()) {
+
+                    val film = getdataSnapshot.getValue(Film::class.java!!)
+                    dataList.add(film!!)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(context, "" + error.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 
     private fun currency(harga : Double, textView: TextView) {
