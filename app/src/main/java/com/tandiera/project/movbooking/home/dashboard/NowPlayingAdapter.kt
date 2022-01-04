@@ -28,7 +28,7 @@ class NowPlayingAdapter(private var data: List<Film>,
         return ViewHolder(inflatedView)
     }
 
-    override fun onBindViewHolder(holder: NowPlayingAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ComingSoonAdapter.LeagueViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
     }
 
