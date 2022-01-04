@@ -90,6 +90,15 @@ class DashboardFragment : Fragment() {
                     val film = getdataSnapshot.getValue(Film::class.java!!)
                     dataList.add(film!!)
                 }
+
+                // ADAPTER
+                binding.rvNowplaying.adapter = NowPlayingAdapter(dataList) {
+
+                }
+
+                binding.rvComingSoon.adapter = ComingSoonAdapter(dataList) {
+
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
