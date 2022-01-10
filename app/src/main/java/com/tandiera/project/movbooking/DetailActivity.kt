@@ -61,7 +61,9 @@ class DetailActivity : AppCompatActivity() {
                     dataList.add(Film!!)
                 }
 
-                binding.rvWhoPlay.adapter = PlaysAdapter(dataList)
+                binding.rvWhoPlay.adapter = PlaysAdapter(dataList) {
+
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
