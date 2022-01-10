@@ -1,5 +1,6 @@
 package com.tandiera.project.movbooking.checkout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -64,6 +65,11 @@ class PilihBangkuActivity : AppCompatActivity() {
                 val data = Checkout("A4", "70000")
                 dataList.add(data)
             }
+        }
+
+        binding.btnHome.setOnClickListener {
+            var intent = Intent(this@PilihBangkuActivity, CheckoutActivity::class.java).putExtra("data", dataList)
+            startActivity(intent)
         }
     }
 
