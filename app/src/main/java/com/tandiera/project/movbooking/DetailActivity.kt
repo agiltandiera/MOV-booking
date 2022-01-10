@@ -1,5 +1,6 @@
 package com.tandiera.project.movbooking
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.firebase.database.*
 import com.tandiera.project.movbooking.databinding.ActivityDetailBinding
+import com.tandiera.project.movbooking.databinding.ActivityPilihBangkuBinding
 import com.tandiera.project.movbooking.databinding.ActivitySignInBinding
 import com.tandiera.project.movbooking.home.dashboard.PlaysAdapter
 import com.tandiera.project.movbooking.model.Film
@@ -49,6 +51,12 @@ class DetailActivity : AppCompatActivity() {
 
         binding.rvWhoPlay.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         getData()
+
+        // action for btn pilih bangku
+        binding.btnPilihBangku.setOnClickListener {
+            var intent = Intent(this@DetailActivity, ActivityPilihBangkuBinding::class.java).putExtra("data", data)
+            startActivity(intent)
+        }
     }
 
     private fun getData() {
