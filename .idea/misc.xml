@@ -17,6 +17,8 @@
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_rectagle_pink.xml" value="0.19641025641025642" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_rectagle_white.xml" value="0.12037037037037036" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/wallet.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/activity_checkout.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/activity_checkout_success.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/activity_on_boarding_one.xml" value="0.14666666666666667" />
@@ -33,6 +35,7 @@
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/fragment_pilih_bangku.xml" value="0.22" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/fragment_tiket.xml" value="0.17552083333333332" />
+        <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/row_item_checkout.xml" value="0.4466666666666667" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/row_item_coming_soon.xml" value="0.5" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/row_item_now_playing.xml" value="0.6" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/row_item_plays.xml" value="0.8333333333333334" />
