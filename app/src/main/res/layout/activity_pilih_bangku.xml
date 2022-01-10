@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pilihBangkuFragment"
+    tools:context=".PilihBangkuActivity"
     android:background="@color/main_color">
 
     <ImageView
@@ -35,7 +35,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/title_movie"
+        android:id="@+id/tv_kursi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -64,7 +64,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_movie" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_kursi" />
 
     <LinearLayout
         android:id="@+id/line_satu"
@@ -101,12 +101,14 @@
             android:textColor="@color/white" />
 
         <ImageView
+            android:id="@+id/a3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="5dp"
             android:src="@drawable/ic_rectangle_empty"/>
         <ImageView
+            android:id="@+id/a4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -256,7 +258,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_pink5"
+        android:id="@+id/btn_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
