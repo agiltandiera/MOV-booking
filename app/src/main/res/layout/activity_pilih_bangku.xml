@@ -266,10 +266,12 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/shape_rectagle_pink"
         android:text="BELI TIKET"
+        android:visibility="invisible"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
