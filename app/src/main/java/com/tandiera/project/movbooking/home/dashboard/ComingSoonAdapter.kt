@@ -20,7 +20,7 @@ class ComingSoonAdapter(private var data: List<Film>,
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LeagueViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         ContextAdapter = parent.context
-        val inflatedView: View = layoutInflater.inflate(R.layout.row_item_coming_soon, parent, false)
+        val inflatedView: View = layoutInflater.inflate(R.layout.row_item_plays, parent, false)
 
         return LeagueViewHolder(inflatedView)
     }
