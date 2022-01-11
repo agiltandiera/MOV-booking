@@ -39,7 +39,7 @@ class CheckoutActivity : AppCompatActivity() {
         dataList.add(Checkout("Total harus dibyar", total.toString()))
 
         binding.rvCheckout.layoutManager = LinearLayoutManager(this)
-        binding.rvCheckout.adapter = CheckoutAdapter(dataList)
+        binding.rvCheckout.adapter = CheckoutAdapter(dataList) {}
 
         binding.btnTiket.setOnClickListener {
             var intent = Intent(this, CheckoutSuccessActivity::class.java)
