@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.tandiera.project.movbooking.R
 import com.tandiera.project.movbooking.model.Checkout
 import com.tandiera.project.movbooking.model.Film
@@ -16,46 +15,42 @@ import java.util.*
 
 class CheckoutAdapter(private var data: List<Checkout>,
                       private val listener:(Checkout) -> Unit)
-    : RecyclerView.Adapter<CheckoutAdapter.ViewHolder>() {
+    : RecyclerView.Adapter<CheckoutAdapter.LeagueViewHolder>() {
 
     lateinit var contextAdapter : Context
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int,
-    ): CheckoutAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int, ): LeagueViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         contextAdapter = parent.context
         val inflatedView: View = layoutInflater.inflate(R.layout.row_item_checkout, parent, false)
 
-        return ViewHolder(inflatedView)
+        return LeagueViewHolder(inflatedView)
     }
 
-    override fun onBindViewHolder(holder: ComingSoonAdapter.LeagueViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LeagueViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
     }
 
     override fun getItemCount(): Int = data.size
 
     // class viewholder
-    class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-        private val tvTitle = view.findViewById<TextView>(R.id.tv_kursi)
-        private val tvHarga = view.findViewById<TextView>(R.id.tv_harga)
+    class LeagueViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val tvImage = view.findViewById<ImageView>(R.id.iv_poster_image)
+        private val tvTitle: TextView = view.findViewById(R.id.tv_kursi)
+        private val tvHarga: TextView = view.findViewById(R.id.tv_harga)
 
-        fun bindItem(data: Checkout, listener: (Film) -> Unit, context: Context) {
+        fun bindItem(data: Checkout, listener: (Checkout) -> Unit, context : Context, position : Int) {
 
-            val localID = Locale("id", "ID")
-            val formatRupiah = NumberFormat.getCurrencyInstance(localID)
+
+            val localeID = Locale("in", "ID")
+            val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
             tvHarga.setText(formatRupiah.format(data.harga!!.toDouble()))
 
-            if(data.kursi!!.startsWith("Total")) {
-                tvTitle.setText(data.kursi)
-                tvTitle.setCompoundDrawables(null, null, null, null)
+            if (data.kursi!!.startsWith("Total")){
+                tvTitle.text = data.kursi
+                tvTitle.setCompoundDrawables(null,null,null,null)
             } else {
-                tvTitle.setText("Seat No. " + data.kursi)
-//                tvHarga.setText(data.harga)
+                tvTitle.text = "Seat No. "+data.kursi
             }
 
             itemView.setOnClickListener {
@@ -63,5 +58,4 @@ class CheckoutAdapter(private var data: List<Checkout>,
             }
         }
     }
-
 }
