@@ -13,36 +13,36 @@ import com.tandiera.project.movbooking.model.Film
 
 class NowPlayingAdapter(private var data: List<Film>,
                         private val listener:(Film) -> Unit)
-    : RecyclerView.Adapter<NowPlayingAdapter.ViewHolder>() {
+    : RecyclerView.Adapter<NowPlayingAdapter.LeagueViewHolder>() {
 
     lateinit var contextAdapter : Context
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): NowPlayingAdapter.ViewHolder {
+    ): NowPlayingAdapter.LeagueViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         contextAdapter = parent.context
         val inflatedView: View = layoutInflater.inflate(R.layout.row_item_now_playing, parent, false)
 
-        return ViewHolder(inflatedView)
+        return LeagueViewHolder(inflatedView)
     }
 
-    override fun onBindViewHolder(holder: ComingSoonAdapter.LeagueViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LeagueViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
     }
 
     override fun getItemCount(): Int = data.size
 
     // class viewholder
-    class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+    class LeagueViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         private val tvTitle = view.findViewById<TextView>(R.id.tv_kursi)
         private val tvGenre = view.findViewById<TextView>(R.id.tv_genre)
         private val tvRate = view.findViewById<TextView>(R.id.tv_rate)
 
         private val tvImage = view.findViewById<ImageView>(R.id.iv_poster_image)
 
-        fun bindItem(data: Film, listener: (Film) -> Unit, context: Context) {
+        fun bindItem(data: Film, listener: (Film) -> Unit, context: Context, position: Int) {
             tvTitle.setText(data.judul)
             tvGenre.setText(data.genre)
             tvRate.setText(data.rating)
