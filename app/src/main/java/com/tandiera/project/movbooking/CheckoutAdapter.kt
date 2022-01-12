@@ -1,15 +1,12 @@
-package com.tandiera.project.movbooking.home.dashboard
+package com.tandiera.project.movbooking
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.tandiera.project.movbooking.R
 import com.tandiera.project.movbooking.model.Checkout
-import com.tandiera.project.movbooking.model.Film
 import java.text.NumberFormat
 import java.util.*
 

@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.tandiera.project.movbooking.R
 import com.tandiera.project.movbooking.databinding.ActivityCheckoutBinding
-import com.tandiera.project.movbooking.databinding.ActivityPilihBangkuBinding
-import com.tandiera.project.movbooking.home.dashboard.CheckoutAdapter
+import com.tandiera.project.movbooking.CheckoutAdapter
 import com.tandiera.project.movbooking.model.Checkout
 import com.tandiera.project.movbooking.utils.Preferences
 
