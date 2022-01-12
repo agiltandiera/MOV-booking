@@ -12,8 +12,11 @@
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/ic_rectangle_selected.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/ic_tiket.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/ic_wallet2.xml" value="0.19583333333333333" />
+        <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_line.xml" value="0.19947916666666668" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_line_blue.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_rectagle_blue.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_rectagle_blue_grey_left.xml" value="0.19947916666666668" />
+        <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_rectagle_blue_grey_right.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_rectagle_pink.xml" value="0.19641025641025642" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/shape_rectagle_white.xml" value="0.12037037037037036" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/drawable/wallet.xml" value="0.1" />
@@ -35,6 +38,7 @@
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/activity_wallet.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/fragment_pilih_bangku.xml" value="0.22" />
+        <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/fragment_setting.xml" value="0.22" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/fragment_tiket.xml" value="0.22" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/row_item_checkout.xml" value="0.4466666666666667" />
         <entry key="..\:/AndroidStudio/Project/training/MOV booking/app/src/main/res/layout/row_item_checkout_white.xml" value="0.4466666666666667" />
