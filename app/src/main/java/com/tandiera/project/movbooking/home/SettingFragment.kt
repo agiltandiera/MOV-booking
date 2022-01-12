@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.tandiera.project.movbooking.R
+import com.tandiera.project.movbooking.databinding.FragmentDashboardBinding
+import com.tandiera.project.movbooking.databinding.FragmentSettingBinding
+import com.tandiera.project.movbooking.utils.Preferences
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +27,10 @@ class SettingFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var binding: FragmentSettingBinding
+    lateinit var preferences: Preferences
+    lateinit var mDatabase: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,10 +44,21 @@ class SettingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false)
+        binding = FragmentSettingBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
-    companion object {
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        preferences = Preferences(requireActivity().applicationContext)
+        mDatabase = FirebaseDatabase.getInstance().getReference("Film")
+
+        binding.tvNama.text = preferences.getValues("nama")
+    }
+
+        companion object {
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
