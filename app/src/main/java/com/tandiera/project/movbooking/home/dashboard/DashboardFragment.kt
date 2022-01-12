@@ -13,8 +13,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.database.*
 import com.tandiera.project.movbooking.DetailActivity
-import com.tandiera.project.movbooking.R
-import com.tandiera.project.movbooking.databinding.ActivitySignUpPhotoBinding
 import com.tandiera.project.movbooking.databinding.FragmentDashboardBinding
 import com.tandiera.project.movbooking.model.Film
 import com.tandiera.project.movbooking.utils.Preferences
