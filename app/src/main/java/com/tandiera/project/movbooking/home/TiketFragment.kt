@@ -81,7 +81,7 @@ class TiketFragment : Fragment() {
                 // ADAPTER
                 binding.rvTiket.adapter = ComingSoonAdapter(datalist) {
                     // MENGIRIM DATA
-                    var intent = Intent(context, DetailActivity::class.java).putExtra("data", it)
+                    var intent = Intent(context, TiketActivity::class.java).putExtra("data", it)
                     startActivity(intent)
                 }
 
