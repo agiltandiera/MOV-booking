@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.tandiera.project.movbooking.R
@@ -56,6 +58,12 @@ class SettingFragment : Fragment() {
         mDatabase = FirebaseDatabase.getInstance().getReference("Film")
 
         binding.tvNama.text = preferences.getValues("nama")
+        binding.tvEmail.text = preferences.getValues("email")
+
+        Glide.with(this)
+            .load(preferences.getValues("url"))
+            .apply(RequestOptions.circleCropTransform())
+            .into(binding.ivProfile)
     }
 
         companion object {
