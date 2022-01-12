@@ -40,6 +40,8 @@ class TiketActivity : AppCompatActivity() {
         dataList.add(Checkout("C1", ""))
         dataList.add(Checkout("C2", ""))
 
-        binding.rvCheckout.adapter = TiketAdapter(dataList) {}
+        binding.rvCheckout.adapter = TiketAdapter(dataList) {
+
+        }
     }
 }
